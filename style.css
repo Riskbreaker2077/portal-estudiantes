@@ -1,0 +1,82 @@
+/*
+ * Estilos para el portal de estudiantes. Este dise\u00f1o aplica una est\u00e9tica
+ * moderna con un fondo de degradado y una tarjeta central con sombra. La
+ * tipograf\u00eda y los colores siguen tendencias actuales de dise\u00f1o web.
+ */
+
+/* Ajustes globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  /* Degradado en tonos azulados y violetas */
+  background: linear-gradient(135deg, #4c6ef5, #b197fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+/* Formulario de login */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#login-form input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#login-form input:focus {
+  outline: none;
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.3);
+}
+
+#login-form button {
+  background: #4c6ef5;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+#login-form button:hover {
+  background: #5f79e4;
+}
+
+/* Mensajes de error o \u00e9xito */
+.message {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
