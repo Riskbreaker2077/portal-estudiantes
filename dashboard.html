@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panel de Estudiantes</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="dashboard.css" />
-  </head>
-  <body>
+<body>
+  <div class="main-container">
     <!-- Encabezado con el nombre del estudiante y el curso -->
     <header class="student-header">
-      <h2>Andrade Pineda Victoria – 8°B</h2>
+      <div>
+        <h2>Andrade Pineda Victoria – 8°B</h2>
+        <div style="font-size:0.85rem; opacity:0.85;">Estudiante de grado 8B</div>
+      </div>
+      <!-- placeholder para foto si quieres luego -->
+      <div style="min-width:60px;">
+        <!-- <img src="avatar-placeholder.png" alt="Foto" style="width:50px; border-radius:50%;"> -->
+      </div>
     </header>
+
     <div class="nav-tabs">
       <button class="tab active" data-tab="resultados">Resultados de evaluaciones</button>
       <button class="tab" data-tab="notas">Notas</button>
       <button class="tab" data-tab="descargas">Descargas</button>
     </div>
+
     <!-- Contenido de la pestaña Resultados -->
     <div class="tab-content" id="resultados" style="display: block">
       <div class="table-wrapper">
@@ -46,14 +47,13 @@
         </table>
       </div>
     </div>
-    <!-- Contenido de la pestaña Notas -->
+    <!-- otras pestañas igual -->
     <div class="tab-content" id="notas" style="display: none">
       <p>Pronto podrás consultar tus notas aquí.</p>
     </div>
-    <!-- Contenido de la pestaña Descargas -->
     <div class="tab-content" id="descargas" style="display: none">
       <p>Pronto podrás descargar tus archivos personalizados aquí.</p>
     </div>
-    <script src="dashboard.js"></script>
-  </body>
-</html>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
