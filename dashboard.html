@@ -1,59 +1,106 @@
-<body>
-  <div class="main-container">
-    <!-- Encabezado con el nombre del estudiante y el curso -->
-    <header class="student-header">
-      <div>
-        <h2>Andrade Pineda Victoria – 8°B</h2>
-        <div style="font-size:0.85rem; opacity:0.85;">Estudiante de grado 8B</div>
-      </div>
-      <!-- placeholder para foto si quieres luego -->
-      <div style="min-width:60px;">
-        <!-- <img src="avatar-placeholder.png" alt="Foto" style="width:50px; border-radius:50%;"> -->
-      </div>
-    </header>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Estudiantes</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Encabezado con el nombre del estudiante y el curso -->
+      <header class="student-header">
+        <div class="meta">
+          <div>
+            <h2 id="student-name">Andrade Pineda Victoria – 8°B</h2>
+          </div>
+          <div class="subtext">Estudiante de grado 8B</div>
+        </div>
+        <!-- Placeholder para foto u otro dato -->
+        <div class="avatar-placeholder">
+          <!-- <img src="avatar.png" alt="Foto" style="width:50px; border-radius:50%;"> -->
+        </div>
+      </header>
 
-    <div class="nav-tabs">
-      <button class="tab active" data-tab="resultados">Resultados de evaluaciones</button>
-      <button class="tab" data-tab="notas">Notas</button>
-      <button class="tab" data-tab="descargas">Descargas</button>
-    </div>
+      <!-- Pestañas -->
+      <div class="nav-tabs">
+        <button class="tab active" data-tab="resultados">Resultados de evaluaciones</button>
+        <button class="tab" data-tab="notas">Notas</button>
+        <button class="tab" data-tab="descargas">Descargas</button>
+      </div>
 
-    <!-- Contenido de la pestaña Resultados -->
-    <div class="tab-content" id="resultados" style="display: block">
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Prueba</th>
-              <th>Puntaje General</th>
-              <th>Matemáticas</th>
-              <th>Lenguaje</th>
-              <th>Ciencias Naturales</th>
-              <th>Sociales</th>
-              <th>Inglés</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Prueba final - II periodo</td>
-              <td>41,00</td>
-              <td>15,00</td>
-              <td>40,00</td>
-              <td>50,00</td>
-              <td>75,00</td>
-              <td>25,00</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Contenido pestaña Resultados -->
+      <div class="tab-content" id="resultados" style="display: block">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Prueba</th>
+                <th>Puntaje General</th>
+                <th>Matemáticas</th>
+                <th>Lenguaje</th>
+                <th>Ciencias Naturales</th>
+                <th>Sociales</th>
+                <th>Inglés</th>
+              </tr>
+            </thead>
+            <tbody id="results-body">
+              <tr>
+                <td>Prueba final - II periodo</td>
+                <td>41,00</td>
+                <td>15,00</td>
+                <td>40,00</td>
+                <td>50,00</td>
+                <td>75,00</td>
+                <td>25,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pestaña Notas -->
+      <div class="tab-content" id="notas" style="display: none">
+        <p>Pronto podrás consultar tus notas aquí.</p>
+      </div>
+
+      <!-- Pestaña Descargas -->
+      <div class="tab-content" id="descargas" style="display: none">
+        <p>Pronto podrás descargar tus archivos personalizados aquí.</p>
       </div>
     </div>
-    <!-- otras pestañas igual -->
-    <div class="tab-content" id="notas" style="display: none">
-      <p>Pronto podrás consultar tus notas aquí.</p>
-    </div>
-    <div class="tab-content" id="descargas" style="display: none">
-      <p>Pronto podrás descargar tus archivos personalizados aquí.</p>
-    </div>
-  </div>
-  <script src="dashboard.js"></script>
-</body>
+
+    <!-- Script de interacción y preparación para Supabase -->
+    <script>
+      // Tabs
+      document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.nav-tabs .tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        function activate(tabEl) {
+          tabs.forEach(t => t.classList.remove('active'));
+          tabEl.classList.add('active');
+          const target = tabEl.getAttribute('data-tab');
+          contents.forEach(c => {
+            c.style.display = c.id === target ? 'block' : 'none';
+          });
+        }
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => activate(tab));
+        });
+
+        // Leer student_id de query string para futuro uso
+        const params = new URLSearchParams(window.location.search);
+        const studentId = params.get('student_id');
+        if (studentId) {
+          // placeholder: en el futuro se usará Supabase para llenar header y tabla
+          console.log('student_id recibido:', studentId);
+          // ejemplo: cambiar header si se obtiene perfil
+          // document.getElementById('student-name').textContent = 'Nombre real – Curso';
+        }
+      });
+    </script>
+  </body>
+</html>
+
