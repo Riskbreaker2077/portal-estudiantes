@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Estudiantes</title>
-    <!-- Reutilizamos estilos base y agregamos los específicos del panel -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body>
+    <!-- Encabezado con el nombre del estudiante y el curso -->
+    <header class="student-header">
+      <h2>Andrade Pineda Victoria – 8°B</h2>
+    </header>
     <div class="nav-tabs">
       <button class="tab active" data-tab="resultados">Resultados de evaluaciones</button>
       <button class="tab" data-tab="notas">Notas</button>
@@ -20,7 +23,7 @@
         <table>
           <thead>
             <tr>
-              <th>Nombre</th>
+              <th>Prueba</th>
               <th>Puntaje General</th>
               <th>Matemáticas</th>
               <th>Lenguaje</th>
@@ -30,9 +33,8 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Datos de ejemplo tomados de la imagen proporcionada -->
             <tr>
-              <td>Andrade Pineda Victoria</td>
+              <td>Prueba final - II periodo</td>
               <td>41,00</td>
               <td>15,00</td>
               <td>40,00</td>
@@ -40,267 +42,16 @@
               <td>75,00</td>
               <td>25,00</td>
             </tr>
-            <tr>
-              <td>Arcos Garcia Maicol Alejandro</td>
-              <td>28,00</td>
-              <td>40,00</td>
-              <td>20,00</td>
-              <td>25,00</td>
-              <td>20,00</td>
-              <td>35,00</td>
-            </tr>
-            <tr>
-              <td>Arias Hidalgo Valeria</td>
-              <td>55,00</td>
-              <td>35,00</td>
-              <td>75,00</td>
-              <td>50,00</td>
-              <td>85,00</td>
-              <td>30,00</td>
-            </tr>
-            <tr>
-              <td>Bermúdez Yate Daniela</td>
-              <td>51,00</td>
-              <td>45,00</td>
-              <td>55,00</td>
-              <td>40,00</td>
-              <td>65,00</td>
-              <td>50,00</td>
-            </tr>
-            <tr>
-              <td>Caicedo Cardozo Zarahy Andrea</td>
-              <td>51,00</td>
-              <td>45,00</td>
-              <td>55,00</td>
-              <td>40,00</td>
-              <td>80,00</td>
-              <td>35,00</td>
-            </tr>
-            <tr>
-              <td>Carrillo Franco Sara Alejandra</td>
-              <td>39,00</td>
-              <td>30,00</td>
-              <td>65,00</td>
-              <td>15,00</td>
-              <td>55,00</td>
-              <td>30,00</td>
-            </tr>
-            <tr>
-              <td>Castaño Díaz Saray Sofía</td>
-              <td>53,00</td>
-              <td>25,00</td>
-              <td>60,00</td>
-              <td>35,00</td>
-              <td>75,00</td>
-              <td>70,00</td>
-            </tr>
-            <tr>
-              <td>Galvez Henao Martín Jerónimo</td>
-              <td>79,00</td>
-              <td>55,00</td>
-              <td>80,00</td>
-              <td>80,00</td>
-              <td>90,00</td>
-              <td>90,00</td>
-            </tr>
-            <tr>
-              <td>Gañán Bueno Manuela</td>
-              <td>45,00</td>
-              <td>50,00</td>
-              <td>50,00</td>
-              <td>35,00</td>
-              <td>65,00</td>
-              <td>25,00</td>
-            </tr>
-            <tr>
-              <td>García Arteaga Rayber Alexander</td>
-              <td>57,00</td>
-              <td>30,00</td>
-              <td>50,00</td>
-              <td>55,00</td>
-              <td>70,00</td>
-              <td>80,00</td>
-            </tr>
-            <tr>
-              <td>Gil Pulgarín Samuel</td>
-              <td>53,00</td>
-              <td>50,00</td>
-              <td>60,00</td>
-              <td>50,00</td>
-              <td>75,00</td>
-              <td>30,00</td>
-            </tr>
-            <tr>
-              <td>Guerrero Gómez Bárbara Isabella</td>
-              <td>59,00</td>
-              <td>10,00</td>
-              <td>75,00</td>
-              <td>55,00</td>
-              <td>90,00</td>
-              <td>65,00</td>
-            </tr>
-            <tr>
-              <td>Herrera Castro Liseth Johanna</td>
-              <td>55,00</td>
-              <td>40,00</td>
-              <td>55,00</td>
-              <td>60,00</td>
-              <td>50,00</td>
-              <td>70,00</td>
-            </tr>
-            <tr>
-              <td>Medina Morales Sebastián</td>
-              <td>70,00</td>
-              <td>45,00</td>
-              <td>60,00</td>
-              <td>65,00</td>
-              <td>95,00</td>
-              <td>85,00</td>
-            </tr>
-            <tr>
-              <td>Moreno Rico Michel Dayana</td>
-              <td>65,00</td>
-              <td>50,00</td>
-              <td>75,00</td>
-              <td>70,00</td>
-              <td>95,00</td>
-              <td>35,00</td>
-            </tr>
-            <tr>
-              <td>Obando Muñoz José Alejandro</td>
-              <td>33,00</td>
-              <td>35,00</td>
-              <td>40,00</td>
-              <td>30,00</td>
-              <td>35,00</td>
-              <td>25,00</td>
-            </tr>
-            <tr>
-              <td>Ortuz Cuero Nathalia Carolina</td>
-              <td>53,00</td>
-              <td>25,00</td>
-              <td>70,00</td>
-              <td>60,00</td>
-              <td>85,00</td>
-              <td>25,00</td>
-            </tr>
-            <tr>
-              <td>Paredes Linares Edgardo Andrés</td>
-              <td>39,00</td>
-              <td>30,00</td>
-              <td>45,00</td>
-              <td>50,00</td>
-              <td>50,00</td>
-              <td>20,00</td>
-            </tr>
-            <tr>
-              <td>Puello Ayala Valeria</td>
-              <td>58,00</td>
-              <td>50,00</td>
-              <td>60,00</td>
-              <td>70,00</td>
-              <td>65,00</td>
-              <td>45,00</td>
-            </tr>
-            <tr>
-              <td>Rengifo Jurado Mariana</td>
-              <td>34,00</td>
-              <td>35,00</td>
-              <td>50,00</td>
-              <td>10,00</td>
-              <td>50,00</td>
-              <td>25,00</td>
-            </tr>
-            <tr>
-              <td>Rivera Colorado Santiago</td>
-              <td>63,00</td>
-              <td>25,00</td>
-              <td>95,00</td>
-              <td>70,00</td>
-              <td>95,00</td>
-              <td>30,00</td>
-            </tr>
-            <tr>
-              <td>Salazar Gómez Maria Alejandra</td>
-              <td>62,00</td>
-              <td>45,00</td>
-              <td>75,00</td>
-              <td>75,00</td>
-              <td>90,00</td>
-              <td>25,00</td>
-            </tr>
-            <tr>
-              <td>Segura Tique Paulina</td>
-              <td>44,00</td>
-              <td>25,00</td>
-              <td>50,00</td>
-              <td>35,00</td>
-              <td>85,00</td>
-              <td>25,00</td>
-            </tr>
-            <tr>
-              <td>Serna Bedoya Juan Diego</td>
-              <td>40,00</td>
-              <td>40,00</td>
-              <td>35,00</td>
-              <td>25,00</td>
-              <td>65,00</td>
-              <td>35,00</td>
-            </tr>
-            <tr>
-              <td>Toro Guedez Anjhelina</td>
-              <td>57,00</td>
-              <td>45,00</td>
-              <td>75,00</td>
-              <td>70,00</td>
-              <td>75,00</td>
-              <td>20,00</td>
-            </tr>
-            <tr>
-              <td>Trujillo Reyes Hayden David</td>
-              <td>45,00</td>
-              <td>30,00</td>
-              <td>60,00</td>
-              <td>30,00</td>
-              <td>70,00</td>
-              <td>35,00</td>
-            </tr>
-            <tr>
-              <td>Trujillo Reyes Maily Yorely</td>
-              <td>61,00</td>
-              <td>45,00</td>
-              <td>70,00</td>
-              <td>50,00</td>
-              <td>85,00</td>
-              <td>55,00</td>
-            </tr>
-            <tr>
-              <td>Villegas Motato Hedy Carolina</td>
-              <td>53,00</td>
-              <td>30,00</td>
-              <td>55,00</td>
-              <td>60,00</td>
-              <td>90,00</td>
-              <td>30,00</td>
-            </tr>
-            <tr>
-              <td>Zambrano Morán Sara Noemí</td>
-              <td>56,00</td>
-              <td>35,00</td>
-              <td>70,00</td>
-              <td>65,00</td>
-              <td>75,00</td>
-              <td>35,00</td>
-            </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <!-- Contenido de las pestañas futuras -->
-    <div class="tab-content" id="notas">
+    <!-- Contenido de la pestaña Notas -->
+    <div class="tab-content" id="notas" style="display: none">
       <p>Pronto podrás consultar tus notas aquí.</p>
     </div>
-    <div class="tab-content" id="descargas">
+    <!-- Contenido de la pestaña Descargas -->
+    <div class="tab-content" id="descargas" style="display: none">
       <p>Pronto podrás descargar tus archivos personalizados aquí.</p>
     </div>
     <script src="dashboard.js"></script>
