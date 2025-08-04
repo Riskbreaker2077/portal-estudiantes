@@ -1,102 +1,53 @@
-/* Estilos específicos para el panel de estudiantes */
-
-body {
-  /* Utilizamos un degradado similar al de la página de login para coherencia visual */
-  background: linear-gradient(135deg, #6f7bf7, #a88cf7);
-  font-family: Arial, Helvetica, sans-serif;
+/* ====== Reset básico y caja ====== */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.nav-tabs {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
+/* ====== Fondo general y fuente ====== */
+body {
+  background: linear-gradient(135deg, #6f7bf7 0%, #a88cf7 70%);
+  font-family: 'Inter', system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  color: #1f2340;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
-.nav-tabs .tab {
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  margin: 0 10px;
-  padding: 12px 24px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 16px;
-  color: #333;
-  transition: background 0.3s, color 0.3s;
+/* ====== Contenedor central ====== */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
 }
 
-.nav-tabs .tab:hover {
-  background: rgba(255, 255, 255, 1);
-}
-
-.nav-tabs .tab.active {
-  background: #4e60e6;
-  color: #fff;
-}
-
-.tab-content {
-  width: 90%;
-  max-width: 1000px;
-  margin: 20px auto;
-  display: none;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-thead th {
-  position: sticky;
-  top: 0;
-  background-color: #f5f5f5;
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-}
-
-tbody td {
-  padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-tbody tr:hover {
-  background-color: #f0f5ff;
-}
-
-/* Contenedor general para no pegar todo al borde */
-
-/* Header más compacto y con separación */
+/* ====== Header del estudiante ====== */
 .student-header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  background: rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.08);
   padding: 0.75rem 1rem;
   border-radius: 12px;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+.student-header div.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.student-header .subtext {
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
-/* Pestañas mejoradas */
+/* ====== Pestañas ====== */
 .nav-tabs {
   display: flex;
   gap: 0.75rem;
@@ -109,27 +60,33 @@ tbody tr:hover {
   cursor: pointer;
   border-radius: 8px;
   font-weight: 500;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.85);
   color: #2c2c2c;
-  transition: background .2s;
+  transition: all .2s ease;
+  position: relative;
 }
 .nav-tabs .tab.active {
   background: #4f63f7;
   color: #fff;
-  box-shadow: 0 8px 20px -5px rgba(79,99,247,0.5);
+  box-shadow: 0 12px 30px -10px rgba(79,99,247,0.5);
+}
+.nav-tabs .tab:not(.active):hover {
+  filter: brightness(1.05);
 }
 
-/* Tabla responsiva con scroll horizontal */
+/* ====== Tabla ====== */
 .table-wrapper {
   overflow-x: auto;
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 12px 40px -10px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 60px -15px rgba(0,0,0,0.08);
+  padding: 0.5rem;
 }
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px;
+  min-width: 760px;
+  font-size: 0.9rem;
 }
 thead {
   background: #f5f5f7;
@@ -137,16 +94,45 @@ thead {
 th, td {
   padding: 0.75rem 1rem;
   text-align: center;
-  font-size: 0.9rem;
   white-space: nowrap;
 }
 th {
   position: sticky;
   top: 0;
-  z-index: 1;
+  font-weight: 600;
+  border-bottom: 1px solid #e6e8ec;
 }
-
-/* Alternado de filas */
+tbody tr {
+  border-bottom: 1px solid #eee;
+}
 tbody tr:nth-child(odd) {
   background: #fafafa;
+}
+
+/* ====== Mensajes / placeholders ====== */
+.tab-content p {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ====== Responsividad ligera ====== */
+@media (max-width: 1024px) {
+  .student-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-tabs {
+    justify-content: flex-start;
+  }
+  table {
+    font-size: 0.8rem;
+  }
+}
+
+/* ====== Micro detalles ====== */
+.tab-content {
+  margin-bottom: 1.5rem;
 }
